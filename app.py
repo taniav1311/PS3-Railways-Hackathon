@@ -16,7 +16,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PROJECT_ROOT)
 
 st.set_page_config(
-    page_title="RailIntel - Railway Intelligence",
+    page_title="RailMitra - Railway Intelligence",
     page_icon="🚂",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -115,7 +115,7 @@ elif now.month in [10, 11, 3, 4]:
 else:
     season_str = "Normal"
 
-
+st.sidebar.metric("Season", season_str)
 st.sidebar.metric("Date", now.strftime("%d %b %Y"))
 st.sidebar.metric("Time", now.strftime("%H:%M"))
 
@@ -126,6 +126,7 @@ st.sidebar.success("Confirmation Model — Active")
 st.sidebar.success("Congestion Analyzer — Active")
 st.sidebar.success("Network Graph — Active")
 
+st.sidebar.markdown("---")
 
 
 
@@ -325,15 +326,7 @@ elif mode == "Delay Analysis":
                     st.metric(p['station_name'][:12], f"{p['predicted_delay_minutes']:.0f} min")
                     st.caption(p["cascade_severity"])
 
-            st.markdown("---")
-            total = sum(p["predicted_delay_minutes"] for p in rd)
-            mx = max(p["predicted_delay_minutes"] for p in rd)
-            avg = total / len(rd)
-            risk = "HIGH" if avg > 30 else "MEDIUM" if avg > 15 else "LOW"
-            s1, s2, s3 = st.columns(3)
-            s1.metric("Total Accumulated Delay", f"{total:.0f} min")
-            s2.metric("Maximum at Any Station", f"{mx:.0f} min")
-            s3.metric("Risk Level", risk)
+            
 
     with dt2:
         st.subheader("Delay Cascade — Season Comparison")
@@ -923,6 +916,3 @@ def fallback_response(query, err=""):
         parts.append("Available topics: delay analysis, ticket confirmation, station congestion, "
                     "route alternatives, network resilience.")
     return "\n\n".join(parts)
-
-
-
