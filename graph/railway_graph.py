@@ -17,7 +17,7 @@ class RailwayNetwork:
         # Load data using absolute paths
         data_dir = os.path.join(PROJECT_ROOT, "data")
 
-        print("📂 Loading data files...")
+        print(" Loading data files...")
         self.stations = pd.read_csv(os.path.join(data_dir, "stations.csv"))
         print(f"  ✅ Loaded {len(self.stations)} stations")
 
@@ -401,7 +401,7 @@ class RailwayNetwork:
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("🚂 Railway Network Graph - Mumbai to Delhi Corridor")
+    print(" Railway Network Graph - Mumbai to Delhi Corridor")
     print("=" * 60)
 
     # Build the network
@@ -409,7 +409,7 @@ if __name__ == "__main__":
 
     # ---- 1. Network Statistics ----
     print("\n" + "=" * 60)
-    print("📊 NETWORK STATISTICS")
+    print(" NETWORK STATISTICS")
     print("=" * 60)
     stats = rn.get_network_stats()
     for key, value in stats.items():
@@ -426,7 +426,7 @@ if __name__ == "__main__":
 
     # ---- 3. Alternative Routes ----
     print("\n" + "=" * 60)
-    print("🛤️ ALTERNATIVE ROUTES: Mumbai Central → New Delhi")
+    print(" ALTERNATIVE ROUTES: Mumbai Central → New Delhi")
     print("=" * 60)
     routes = rn.find_alternative_routes("MMCT", "NDLS", k=5)
     for r in routes:
@@ -439,7 +439,7 @@ if __name__ == "__main__":
             if r["has_direct_train"]:
                 print(f"    🚆 Direct trains: {', '.join(r['direct_train_names'])}")
             else:
-                print(f"    ⚠️ No direct train - requires connection")
+                print(f"     No direct train - requires connection")
 
     # ---- 4. Routes from CSMT ----
     print("\n" + "=" * 60)
@@ -452,24 +452,24 @@ if __name__ == "__main__":
             print(f"\n  Route {r['route_id']}: {path_str}")
             print(f"    Stops: {r['num_stops']}")
             if r["has_direct_train"]:
-                print(f"    🚆 Direct trains: {', '.join(r['direct_train_names'])}")
+                print(f"     Direct trains: {', '.join(r['direct_train_names'])}")
 
     # ---- 5. Busiest Corridors ----
     print("\n" + "=" * 60)
-    print("🔥 BUSIEST RAIL CORRIDORS")
+    print(" BUSIEST RAIL CORRIDORS")
     print("=" * 60)
     corridors = rn.get_busiest_corridors()
     print(corridors[["from_name", "to_name", "num_trains", "route"]].to_string(index=False))
 
     # ---- 6. Station Failure Simulations ----
     print("\n" + "=" * 60)
-    print("💥 STATION FAILURE SIMULATIONS")
+    print(" STATION FAILURE SIMULATIONS")
     print("=" * 60)
 
     critical_stations = ["NDLS", "BRC", "KOTA", "MTJ", "BSL"]
     for stn in critical_stations:
         result = rn.simulate_station_failure(stn)
-        status = "❌ BREAKS NETWORK" if not result["network_still_connected"] else "✅ Network survives"
+        status = " BREAKS NETWORK" if not result["network_still_connected"] else "✅ Network survives"
         print(f"\n  💥 Remove {result['station_name']} ({stn}):")
         print(f"     Affected trains: {result['num_affected_trains']}")
         print(f"     Network fragments: {result['network_fragments']}")
@@ -479,7 +479,7 @@ if __name__ == "__main__":
 
     # ---- 7. Community Detection ----
     print("\n" + "=" * 60)
-    print("🏘️ NETWORK COMMUNITIES")
+    print(" NETWORK COMMUNITIES")
     print("=" * 60)
     communities = rn.detect_communities()
     for comm in communities:
@@ -489,6 +489,6 @@ if __name__ == "__main__":
 
     # ---- Done ----
     print("\n" + "=" * 60)
-    print("✅ PHASE 2 COMPLETE - Railway Network Graph Built!")
+    print(" PHASE 2 COMPLETE - Railway Network Graph Built!")
     print("=" * 60)
-    print("\n🚀 You can now proceed to Phase 3 (ML Models)!")
+    print("\n You can now proceed to Phase 3 (ML Models)!")
