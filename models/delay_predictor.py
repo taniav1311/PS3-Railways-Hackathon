@@ -24,9 +24,9 @@ class DelayPredictor:
 
         # Load data
         data_dir = os.path.join(PROJECT_ROOT, "data")
-        print("📂 Loading delay data...")
+        print(" Loading delay data...")
         self.delay_data = pd.read_csv(os.path.join(data_dir, "historical_delays.csv"))
-        print(f"  ✅ Loaded {len(self.delay_data)} delay records")
+        print(f"   Loaded {len(self.delay_data)} delay records")
 
         self.trains_data = pd.read_csv(os.path.join(data_dir, "trains.csv"))
         self.stations_data = pd.read_csv(os.path.join(data_dir, "stations.csv"))
@@ -36,7 +36,7 @@ class DelayPredictor:
 
     def _prepare_and_train(self):
         """Prepare features and train both models"""
-        print("\n🧠 Training Delay Prediction Model...")
+        print("\n Training Delay Prediction Model...")
         df = self.delay_data.copy()
 
         # Encode categorical features
@@ -71,7 +71,7 @@ class DelayPredictor:
         y_pred = self.model.predict(X_test)
         self.mae = mean_absolute_error(y_test, y_pred)
         self.r2 = r2_score(y_test, y_pred)
-        print(f"  ✅ Delay Model - MAE: {self.mae:.2f} min | R²: {self.r2:.3f}")
+        print(f"   Delay Model - MAE: {self.mae:.2f} min | R²: {self.r2:.3f}")
 
         # ---- Model 2: Cascade Severity Classifier ----
         print("  Training cascade severity model (RandomForest)...")
@@ -93,11 +93,11 @@ class DelayPredictor:
         self.cascade_model.fit(X_train_c, y_train_c)
 
         cascade_acc = accuracy_score(y_test_c, self.cascade_model.predict(X_test_c))
-        print(f"  ✅ Cascade Model - Accuracy: {cascade_acc:.3f}")
+        print(f"   Cascade Model - Accuracy: {cascade_acc:.3f}")
 
         # Feature importance
         self.feature_importance = dict(zip(features, self.model.feature_importances_))
-        print(f"\n📊 Feature Importance:")
+        print(f"\n Feature Importance:")
         sorted_features = sorted(self.feature_importance.items(), key=lambda x: x[1], reverse=True)
         for fname, importance in sorted_features:
             bar = "█" * int(importance * 50)
@@ -247,7 +247,7 @@ class DelayPredictor:
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("⏱️ Train Delay Predictor - Mumbai to Delhi")
+    print(" Train Delay Predictor - Mumbai to Delhi")
     print("=" * 60)
 
     dp = DelayPredictor()
@@ -275,13 +275,13 @@ if __name__ == "__main__":
             is_fog=tc.get("fog", False),
             is_festival=tc.get("festival", False)
         )
-        print(f"\n  📍 {tc['label']}:")
+        print(f"\n   {tc['label']}:")
         print(f"     Predicted Delay: {result['predicted_delay_minutes']} minutes")
         print(f"     Severity: {result['cascade_severity']}")
 
     # ---- Test 2: Full Route Prediction ----
     print("\n" + "=" * 60)
-    print("🚂 TEST 2: Full Route Delay Prediction (Rajdhani - Monsoon)")
+    print(" TEST 2: Full Route Delay Prediction (Rajdhani - Monsoon)")
     print("=" * 60)
 
     route_delays = dp.predict_route_delays(
@@ -297,7 +297,7 @@ if __name__ == "__main__":
 
     # ---- Test 3: Full Route (Punjab Mail - Fog) ----
     print("\n" + "=" * 60)
-    print("🚂 TEST 3: Full Route Delay Prediction (Punjab Mail - Fog Season)")
+    print(" TEST 3: Full Route Delay Prediction (Punjab Mail - Fog Season)")
     print("=" * 60)
 
     route_delays2 = dp.predict_route_delays(
@@ -313,7 +313,7 @@ if __name__ == "__main__":
 
     # ---- Test 4: Vulnerable Routes ----
     print("\n" + "=" * 60)
-    print("⚠️ TEST 4: Most Vulnerable Routes Today")
+    print(" TEST 4: Most Vulnerable Routes Today")
     print("=" * 60)
 
     from datetime import datetime
@@ -325,7 +325,7 @@ if __name__ == "__main__":
 
     # ---- Test 5: Model Metrics ----
     print("\n" + "=" * 60)
-    print("📊 TEST 5: Model Performance Metrics")
+    print(" TEST 5: Model Performance Metrics")
     print("=" * 60)
     metrics = dp.get_model_metrics()
     print(f"  MAE: {metrics['delay_model_mae']} minutes")
@@ -333,5 +333,6 @@ if __name__ == "__main__":
     print(f"  Training records: {metrics['total_training_records']}")
 
     print("\n" + "=" * 60)
-    print("✅ DELAY PREDICTOR - ALL TESTS PASSED!")
+    print(" DELAY PREDICTOR - ALL TESTS PASSED!")
     print("=" * 60)
+
