@@ -925,3 +925,4 @@ def fallback_response(query, err=""):
                     "route alternatives, network resilience.")
     return "\n\n".join(parts)
 
+
