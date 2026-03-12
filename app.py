@@ -115,7 +115,7 @@ elif now.month in [10, 11, 3, 4]:
 else:
     season_str = "Normal"
 
-st.sidebar.metric("Season", season_str)
+
 st.sidebar.metric("Date", now.strftime("%d %b %Y"))
 st.sidebar.metric("Time", now.strftime("%H:%M"))
 
@@ -126,8 +126,7 @@ st.sidebar.success("Confirmation Model — Active")
 st.sidebar.success("Congestion Analyzer — Active")
 st.sidebar.success("Network Graph — Active")
 
-st.sidebar.markdown("---")
-st.sidebar.caption("Smart India Hackathon 2025 | Team RailMitra")
+
 
 
 # ============================================
@@ -924,5 +923,6 @@ def fallback_response(query, err=""):
         parts.append("Available topics: delay analysis, ticket confirmation, station congestion, "
                     "route alternatives, network resilience.")
     return "\n\n".join(parts)
+
 
 
