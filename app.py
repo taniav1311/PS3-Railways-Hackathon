@@ -281,7 +281,7 @@ if mode == "Train Overview":
 elif mode == "Delay Analysis":
     st.markdown(f'<p class="train-header">Delay Analysis — {selected_train_name}</p>', unsafe_allow_html=True)
 
-    dt1, dt2, dt3 = st.tabs(["Predict Delays", "Season Comparison", "Historical Patterns"])
+    dt1, dt2= st.tabs(["Predict Delays", "Season Comparison"])
 
     with dt1:
         st.subheader("Predicted Delays for Selected Conditions")
@@ -354,42 +354,6 @@ elif mode == "Delay Analysis":
                          height=500, template="plotly_dark",
                          legend=dict(orientation="h", yanchor="bottom", y=1.02))
         st.plotly_chart(fig, use_container_width=True)
-
-    with dt3:
-        st.subheader("Historical Patterns")
-        if not train_delays.empty:
-            c1, c2 = st.columns(2)
-            with c1:
-                dow = train_delays.groupby("day_of_week")["delay_minutes"].mean().reset_index()
-                dm = {0: "Mon", 1: "Tue", 2: "Wed", 3: "Thu", 4: "Fri", 5: "Sat", 6: "Sun"}
-                dow["day_name"] = dow["day_of_week"].map(dm)
-                fig = px.bar(dow, x="day_name", y="delay_minutes", color="delay_minutes",
-                             color_continuous_scale="RdYlGn_r", title="Delay by Day of Week")
-                fig.update_layout(height=350, template="plotly_dark", coloraxis_showscale=False)
-                st.plotly_chart(fig, use_container_width=True)
-            with c2:
-                train_delays["season"] = train_delays.apply(
-                    lambda r: "Monsoon" if r["is_monsoon"] else (
-                        "Fog" if r["is_fog_season"] else (
-                            "Festival" if r["is_festival_season"] else "Normal")), axis=1)
-                sd = train_delays.groupby("season")["delay_minutes"].mean().reset_index()
-                fig = px.bar(sd, x="season", y="delay_minutes", color="season",
-                             color_discrete_map={"Normal": "#4CAF50", "Monsoon": "#2196F3",
-                                                 "Fog": "#9E9E9E", "Festival": "#FF9800"},
-                             title="Delay by Season")
-                fig.update_layout(height=350, template="plotly_dark")
-                st.plotly_chart(fig, use_container_width=True)
-
-            st.subheader("Station x Month Delay Heatmap")
-            hm = train_delays.groupby(["station_code", "month"])["delay_minutes"].mean().reset_index()
-            hp = hm.pivot(index="station_code", columns="month", values="delay_minutes").fillna(0)
-            hp.index = hp.index.map(stn_name)
-            fig = px.imshow(hp, color_continuous_scale="RdYlGn_r",
-                            title=f"Delay Heatmap — {selected_train_name}",
-                            labels=dict(x="Month", y="Station", color="Delay (min)"))
-            fig.update_layout(height=400, template="plotly_dark")
-            st.plotly_chart(fig, use_container_width=True)
-
 
 # ============================================
 # TAB 3: TICKET INTELLIGENCE
@@ -916,4 +880,5 @@ def fallback_response(query, err=""):
         parts.append("Available topics: delay analysis, ticket confirmation, station congestion, "
                     "route alternatives, network resilience.")
     return "\n\n".join(parts)
+
 
