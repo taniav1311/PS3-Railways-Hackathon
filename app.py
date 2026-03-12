@@ -16,7 +16,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PROJECT_ROOT)
 
 st.set_page_config(
-    page_title="RailMitra - Railway Intelligence",
+    page_title="RailIntel - Railway Intelligence",
     page_icon="🚂",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -91,7 +91,7 @@ def stn_name(code):
 # ============================================
 # SIDEBAR — Navigation + Conditions Only
 # ============================================
-st.sidebar.markdown("## RailMitra")
+st.sidebar.markdown("## RailIntel")
 st.sidebar.markdown("*Railway Intelligence Platform*")
 st.sidebar.markdown("---")
 
@@ -916,3 +916,4 @@ def fallback_response(query, err=""):
         parts.append("Available topics: delay analysis, ticket confirmation, station congestion, "
                     "route alternatives, network resilience.")
     return "\n\n".join(parts)
+
