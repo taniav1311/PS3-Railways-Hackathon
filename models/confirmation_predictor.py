@@ -22,9 +22,9 @@ class ConfirmationPredictor:
 
         # Load data
         data_dir = os.path.join(PROJECT_ROOT, "data")
-        print("📂 Loading booking data...")
+        print(" Loading booking data...")
         self.booking_data = pd.read_csv(os.path.join(data_dir, "booking_data.csv"))
-        print(f"  ✅ Loaded {len(self.booking_data)} booking records")
+        print(f"   Loaded {len(self.booking_data)} booking records")
 
         self.trains_data = pd.read_csv(os.path.join(data_dir, "trains.csv"))
         self.stations_data = pd.read_csv(os.path.join(data_dir, "stations.csv"))
@@ -34,7 +34,7 @@ class ConfirmationPredictor:
 
     def _prepare_and_train(self):
         """Prepare features and train the confirmation model"""
-        print("\n🧠 Training Confirmation Prediction Model...")
+        print("\n Training Confirmation Prediction Model...")
         df = self.booking_data.copy()
 
         # Encode categorical columns
@@ -69,16 +69,16 @@ class ConfirmationPredictor:
 
         y_pred = self.model.predict(X_test)
         self.accuracy = accuracy_score(y_test, y_pred)
-        print(f"  ✅ Accuracy: {self.accuracy:.3f}")
+        print(f"   Accuracy: {self.accuracy:.3f}")
 
         # Classification report
-        print(f"\n📊 Classification Report:")
+        print(f"\n Classification Report:")
         report = classification_report(y_test, y_pred, target_names=["Not Confirmed", "Confirmed"])
         print(report)
 
         # Feature importance
         self.feature_importance = dict(zip(self.features, self.model.feature_importances_))
-        print(f"📊 Feature Importance:")
+        print(f" Feature Importance:")
         sorted_features = sorted(self.feature_importance.items(), key=lambda x: x[1], reverse=True)
         for fname, importance in sorted_features:
             bar = "█" * int(importance * 50)
@@ -344,4 +344,5 @@ if __name__ == "__main__":
     print("\n" + "=" * 60)
     print(" CONFIRMATION PREDICTOR - ALL TESTS PASSED!")
     print("=" * 60)
+
 
