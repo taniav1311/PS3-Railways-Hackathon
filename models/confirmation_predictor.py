@@ -249,14 +249,14 @@ class ConfirmationPredictor:
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("🎫 Ticket Confirmation Predictor - Mumbai to Delhi")
+    print("Ticket Confirmation Predictor - Mumbai to Delhi")
     print("=" * 60)
 
     cp = ConfirmationPredictor()
 
     # ---- Test 1: Single Predictions ----
     print("\n" + "=" * 60)
-    print("🎯 TEST 1: Confirmation Probability Predictions")
+    print(" TEST 1: Confirmation Probability Predictions")
     print("=" * 60)
 
     test_cases = [
@@ -288,19 +288,19 @@ if __name__ == "__main__":
             is_festival=tc["month"] in [10, 11, 12],
             is_peak=tc["month"] in [4, 5, 10, 11, 12]
         )
-        print(f"\n  📋 {tc['label']}:")
+        print(f"\n   {tc['label']}:")
         print(f"     {result['confidence_emoji']} Probability: {result['confirmation_probability']:.1%}")
         print(f"     {result['recommendation']}")
 
     # ---- Test 2: Booking Advance ----
     print("\n" + "=" * 60)
-    print("📅 TEST 2: When Should You Book?")
+    print(" TEST 2: When Should You Book?")
     print("=" * 60)
 
     advice = cp.recommend_booking_advance("12951", "MMCT", "NDLS", "3A", month=10)
     print(f"\n  Train: Mumbai Rajdhani | Class: 3A | Month: October")
-    print(f"  🎯 Target: 80% confirmation probability")
-    print(f"  📌 Recommendation: Book at least {advice['recommended_days_advance']} days in advance\n")
+    print(f"   Target: 80% confirmation probability")
+    print(f"   Recommendation: Book at least {advice['recommended_days_advance']} days in advance\n")
 
     print(f"  {'Days Before':<15} {'Est. WL':<12} {'Probability':<15} {'Status'}")
     print(f"  {'─' * 60}")
@@ -312,7 +312,7 @@ if __name__ == "__main__":
 
     # ---- Test 3: Find Best Alternatives ----
     print("\n" + "=" * 60)
-    print("🔄 TEST 3: Best Alternative Trains (MMCT → NDLS)")
+    print(" TEST 3: Best Alternative Trains (MMCT → NDLS)")
     print("=" * 60)
 
     alts = cp.find_best_alternatives("MMCT", "NDLS", "3A", 15, 10)
@@ -329,7 +329,7 @@ if __name__ == "__main__":
 
     # ---- Test 4: Alternatives from CSMT ----
     print("\n" + "=" * 60)
-    print("🔄 TEST 4: Best Alternative Trains (CSMT → NDLS)")
+    print(" TEST 4: Best Alternative Trains (CSMT → NDLS)")
     print("=" * 60)
 
     alts2 = cp.find_best_alternatives("CSMT", "NDLS", "3A", 10, 12)
@@ -342,5 +342,6 @@ if __name__ == "__main__":
                   f"{a['emoji']} {a['confirmation_probability']:.1%}")
 
     print("\n" + "=" * 60)
-    print("✅ CONFIRMATION PREDICTOR - ALL TESTS PASSED!")
+    print(" CONFIRMATION PREDICTOR - ALL TESTS PASSED!")
     print("=" * 60)
+
