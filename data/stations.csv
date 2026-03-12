@@ -1,0 +1,21 @@
+code,name,lat,lon,zone,type,daily_footfall,platforms
+MMCT,Mumbai Central,18.9712,72.8197,WR,terminus,150000,8
+BVI,Borivali,19.2288,72.8567,WR,junction,80000,6
+BL,Valsad,20.61,72.9264,WR,regular,15000,3
+ST,Surat,21.2063,72.8411,WR,major,95000,6
+BRC,Vadodara Junction,22.3104,73.1812,WR,junction,85000,7
+RTM,Ratlam Junction,23.326,75.0367,WR,junction,35000,5
+KOTA,Kota Junction,25.18,75.8648,WCR,junction,50000,6
+SWM,Sawai Madhopur,26.0173,76.3466,WCR,regular,20000,4
+MTJ,Mathura Junction,27.4924,77.6737,NCR,junction,55000,6
+NDLS,New Delhi,28.6442,77.2217,NR,terminus,450000,16
+CSMT,Mumbai CSMT,18.9402,72.8356,CR,terminus,350000,18
+KYN,Kalyan Junction,19.2437,73.1355,CR,junction,100000,8
+NMD,Nashik Road,19.9907,73.762,CR,regular,40000,4
+MMR,Manmad Junction,20.2532,74.437,CR,junction,30000,5
+BSL,Bhusawal Junction,21.0446,75.7714,CR,junction,45000,6
+ET,Itarsi Junction,22.6158,77.7647,WCR,junction,40000,7
+BPL,Bhopal Junction,23.2689,77.4124,WCR,major,70000,6
+JHS,Jhansi Junction,25.4358,78.5685,NCR,junction,55000,8
+GWL,Gwalior Junction,26.2183,78.1828,NCR,major,45000,5
+AGC,Agra Cantt,27.1631,78.0081,NCR,major,60000,6

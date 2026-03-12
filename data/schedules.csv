@@ -1,0 +1,69 @@
+train_number,train_name,station_code,stop_sequence,scheduled_arrival,scheduled_departure,day,distance_km
+12951,Mumbai Rajdhani,MMCT,1,,16:35,1,0
+12951,Mumbai Rajdhani,BRC,2,20:35,20:37,1,326
+12951,Mumbai Rajdhani,KOTA,3,00:35,00:40,1,681
+12951,Mumbai Rajdhani,SWM,4,04:35,04:38,1,1001
+12951,Mumbai Rajdhani,NDLS,5,08:35,,1,1488
+12953,August Kranti Rajdhani,MMCT,1,,17:40,1,0
+12953,August Kranti Rajdhani,ST,2,21:07,21:22,1,264
+12953,August Kranti Rajdhani,BRC,3,00:34,00:49,1,563
+12953,August Kranti Rajdhani,RTM,4,04:01,04:03,1,784
+12953,August Kranti Rajdhani,KOTA,5,07:28,07:30,1,1084
+12953,August Kranti Rajdhani,NDLS,6,10:55,,1,1359
+12267,Mumbai Duronto,MMCT,1,,23:15,1,0
+12267,Mumbai Duronto,NDLS,2,16:25,,1,1454
+12903,Golden Temple Mail,MMCT,1,,21:30,1,0
+12903,Golden Temple Mail,BVI,2,01:12,01:27,1,150
+12903,Golden Temple Mail,BL,3,04:55,05:10,1,312
+12903,Golden Temple Mail,ST,4,08:38,08:41,1,471
+12903,Golden Temple Mail,BRC,5,12:21,12:36,1,609
+12903,Golden Temple Mail,RTM,6,16:04,16:06,1,830
+12903,Golden Temple Mail,KOTA,7,19:46,19:49,1,985
+12903,Golden Temple Mail,SWM,8,23:29,23:39,2,1078
+12903,Golden Temple Mail,MTJ,9,03:12,03:17,2,1190
+12903,Golden Temple Mail,NDLS,10,06:55,,2,1355
+12925,Paschim Express,MMCT,1,,11:30,1,0
+12925,Paschim Express,BVI,2,16:50,16:55,1,165
+12925,Paschim Express,ST,3,22:10,22:12,1,349
+12925,Paschim Express,BRC,4,03:30,03:32,1,521
+12925,Paschim Express,RTM,5,08:50,08:55,1,727
+12925,Paschim Express,KOTA,6,14:10,14:15,2,819
+12925,Paschim Express,SWM,7,19:30,19:40,2,1077
+12925,Paschim Express,MTJ,8,00:50,00:52,2,1221
+12925,Paschim Express,NDLS,9,06:10,,2,1320
+12909,Garib Rath,MMCT,1,,15:45,1,0
+12909,Garib Rath,BVI,2,18:51,18:56,1,292
+12909,Garib Rath,ST,3,21:57,22:12,1,556
+12909,Garib Rath,BRC,4,01:03,01:18,1,809
+12909,Garib Rath,KOTA,5,04:09,04:11,1,1048
+12909,Garib Rath,NDLS,6,07:15,,1,1469
+12137,Punjab Mail,CSMT,1,,19:10,1,0
+12137,Punjab Mail,KYN,2,22:20,22:25,1,120
+12137,Punjab Mail,NMD,3,01:30,01:33,1,240
+12137,Punjab Mail,MMR,4,04:41,04:51,1,373
+12137,Punjab Mail,BSL,5,07:51,08:01,1,531
+12137,Punjab Mail,ET,6,11:02,11:07,1,609
+12137,Punjab Mail,BPL,7,14:12,14:17,1,758
+12137,Punjab Mail,JHS,8,17:23,17:26,1,936
+12137,Punjab Mail,GWL,9,20:33,20:38,2,1075
+12137,Punjab Mail,AGC,10,23:44,23:46,2,1190
+12137,Punjab Mail,MTJ,11,02:54,02:57,2,1305
+12137,Punjab Mail,NDLS,12,06:05,,2,1486
+12621,Tamil Nadu Express,CSMT,1,,22:00,1,0
+12621,Tamil Nadu Express,KYN,2,02:11,02:14,1,177
+12621,Tamil Nadu Express,MMR,3,06:22,06:32,1,342
+12621,Tamil Nadu Express,BSL,4,10:33,10:48,1,508
+12621,Tamil Nadu Express,ET,5,14:45,14:50,1,748
+12621,Tamil Nadu Express,BPL,6,18:56,18:58,1,848
+12621,Tamil Nadu Express,JHS,7,23:07,23:09,2,1035
+12621,Tamil Nadu Express,AGC,8,03:18,03:28,2,1197
+12621,Tamil Nadu Express,NDLS,9,07:30,,2,1316
+12261,Mumbai Duronto Central,CSMT,1,,23:05,1,0
+12261,Mumbai Duronto Central,NDLS,2,16:00,,1,1445
+12187,Mumbai Garib Rath,CSMT,1,,13:55,1,0
+12187,Mumbai Garib Rath,KYN,2,16:29,16:34,1,225
+12187,Mumbai Garib Rath,BSL,3,19:03,19:13,1,467
+12187,Mumbai Garib Rath,BPL,4,21:37,21:47,1,668
+12187,Mumbai Garib Rath,JHS,5,00:11,00:16,1,890
+12187,Mumbai Garib Rath,GWL,6,02:46,02:49,1,1241
+12187,Mumbai Garib Rath,NDLS,7,05:20,,1,1443

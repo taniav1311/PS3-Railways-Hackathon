@@ -1,0 +1,11 @@
+number,name,type,route,stations,departure,arrival,duration_hrs,frequency,total_seats,classes
+12951,Mumbai Rajdhani,Rajdhani,western,"['MMCT', 'BRC', 'KOTA', 'SWM', 'NDLS']",16:35,08:35,16.0,daily,952,"['1A', '2A', '3A']"
+12953,August Kranti Rajdhani,Rajdhani,western,"['MMCT', 'ST', 'BRC', 'RTM', 'KOTA', 'NDLS']",17:40,10:55,17.25,daily,905,"['1A', '2A', '3A']"
+12267,Mumbai Duronto,Duronto,western,"['MMCT', 'NDLS']",23:15,16:25,17.17,daily,816,"['1A', '2A', '3A', 'SL']"
+12903,Golden Temple Mail,Superfast,western,"['MMCT', 'BVI', 'BL', 'ST', 'BRC', 'RTM', 'KOTA', 'SWM', 'MTJ', 'NDLS']",21:30,06:55,33.42,daily,1500,"['2A', '3A', 'SL', 'GN']"
+12925,Paschim Express,Superfast,western,"['MMCT', 'BVI', 'ST', 'BRC', 'RTM', 'KOTA', 'SWM', 'MTJ', 'NDLS']",11:30,06:10,42.67,daily,1800,"['2A', '3A', 'SL', 'GN']"
+12909,Garib Rath,Garib Rath,western,"['MMCT', 'BVI', 'ST', 'BRC', 'KOTA', 'NDLS']",15:45,07:15,15.5,weekly,1200,['3A']
+12137,Punjab Mail,Mail,central,"['CSMT', 'KYN', 'NMD', 'MMR', 'BSL', 'ET', 'BPL', 'JHS', 'GWL', 'AGC', 'MTJ', 'NDLS']",19:10,06:05,34.92,daily,1600,"['1A', '2A', '3A', 'SL', 'GN']"
+12621,Tamil Nadu Express,Superfast,central,"['CSMT', 'KYN', 'MMR', 'BSL', 'ET', 'BPL', 'JHS', 'AGC', 'NDLS']",22:00,07:30,33.5,daily,1400,"['2A', '3A', 'SL', 'GN']"
+12261,Mumbai Duronto Central,Duronto,central,"['CSMT', 'NDLS']",23:05,16:00,16.92,3days,780,"['1A', '2A', '3A']"
+12187,Mumbai Garib Rath,Garib Rath,central,"['CSMT', 'KYN', 'BSL', 'BPL', 'JHS', 'GWL', 'NDLS']",13:55,05:20,15.42,weekly,1100,['3A']
