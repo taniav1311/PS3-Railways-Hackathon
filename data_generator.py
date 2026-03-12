@@ -52,10 +52,6 @@ trains_data = [
      "departure": "17:40", "arrival": "10:55", "duration_hrs": 17.25, "frequency": "daily",
      "total_seats": 905, "classes": ["1A", "2A", "3A"]},
 
-    {"number": "12267", "name": "Mumbai Duronto", "type": "Duronto", "route": "western",
-     "stations": ["MMCT", "NDLS"],
-     "departure": "23:15", "arrival": "16:25", "duration_hrs": 17.17, "frequency": "daily",
-     "total_seats": 816, "classes": ["1A", "2A", "3A", "SL"]},
 
     {"number": "12903", "name": "Golden Temple Mail", "type": "Superfast", "route": "western",
      "stations": ["MMCT", "BVI", "BL", "ST", "BRC", "RTM", "KOTA", "SWM", "MTJ", "NDLS"],
