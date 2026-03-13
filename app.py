@@ -701,18 +701,7 @@ elif mode == "Network Resilience":
                             "degree_centrality", "betweenness_centrality",
                             "vulnerability_score"]], use_container_width=True, hide_index=True)
 
-        if len(rcdf) >= 3:
-            cats = ["Degree", "Betweenness", "Closeness", "PageRank"]
-            fig = go.Figure()
-            for _, row in rcdf.head(5).iterrows():
-                fig.add_trace(go.Scatterpolar(
-                    r=[row["degree_centrality"], row["betweenness_centrality"],
-                       row["closeness_centrality"], row["pagerank"]],
-                    theta=cats, fill='toself', name=row["station_name"]))
-            fig.update_layout(polar=dict(radialaxis=dict(visible=True)),
-                             title="Centrality Radar", height=450, template="plotly_dark")
-            st.plotly_chart(fig, use_container_width=True)
-
+       
     with rt2:
         fs = st.selectbox("Select Station to Remove", selected_train_stations,
                            format_func=lambda x: f"{x} — {stn_name(x)}", key="fs")
@@ -854,6 +843,7 @@ def fallback_response(query, err=""):
         parts.append("Available topics: delay analysis, ticket confirmation, station congestion, "
                     "route alternatives, network resilience.")
     return "\n\n".join(parts)
+
 
 
 
