@@ -362,7 +362,7 @@ elif mode == "Ticket Intelligence":
     st.markdown(f'<p class="train-header">Ticket Intelligence — {selected_train_name}</p>',
                 unsafe_allow_html=True)
 
-    tt1, tt2, tt3 = st.tabs(["Confirmation Predictor", "Booking Advisor", "Booking Statistics"])
+    tt1, tt2 = st.tabs(["Confirmation Predictor"])
 
     with tt1:
         st.subheader("Predict Ticket Confirmation Probability")
@@ -468,34 +468,8 @@ elif mode == "Ticket Intelligence":
                              yaxis=dict(tickformat=".0%"))
             st.plotly_chart(fig, use_container_width=True)
 
-    with tt3:
-        st.subheader(f"Booking Statistics — {selected_train_name}")
-        if not train_bookings.empty:
-            c1, c2, c3, c4 = st.columns(4)
-            c1.metric("Total Bookings", f"{len(train_bookings):,}")
-            c2.metric("Confirmed", f"{train_bookings['confirmed'].sum():,}")
-            c3.metric("Confirmation Rate", f"{train_bookings['confirmed'].mean():.1%}")
-            c4.metric("Avg Waitlist", f"WL/{train_bookings['waitlist_position'].mean():.0f}")
-
-            cl, cr = st.columns(2)
-            with cl:
-                cs = train_bookings.groupby("travel_class")["confirmed"].mean().reset_index()
-                fig = px.bar(cs, x="travel_class", y="confirmed", color="confirmed",
-                             color_continuous_scale="RdYlGn",
-                             text=cs["confirmed"].apply(lambda x: f"{x:.0%}"),
-                             title="Confirmation Rate by Class")
-                fig.update_layout(height=350, template="plotly_dark",
-                                 yaxis=dict(tickformat=".0%"), coloraxis_showscale=False)
-                st.plotly_chart(fig, use_container_width=True)
-            with cr:
-                fig = px.histogram(train_bookings, x="waitlist_position", nbins=30,
-                                   color="confirmed",
-                                   color_discrete_map={True: "#4CAF50", False: "#f44336"},
-                                   title="Waitlist Distribution",
-                                   labels={"confirmed": "Confirmed"})
-                fig.update_layout(height=350, template="plotly_dark")
-                st.plotly_chart(fig, use_container_width=True)
-
+   
+   
 
 # ============================================
 # TAB 4: STATION CONGESTION (FIXED)
@@ -880,5 +854,6 @@ def fallback_response(query, err=""):
         parts.append("Available topics: delay analysis, ticket confirmation, station congestion, "
                     "route alternatives, network resilience.")
     return "\n\n".join(parts)
+
 
 
