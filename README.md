@@ -110,16 +110,6 @@ This approach allowed the project to maintain realistic railway infrastructure a
 
 ---
 
-# Models
-RailIntel integrates several predictive components that power the dashboard:
-•	Gradient Boosting Regressor – predicts delay accumulation along train routes
-•	Random Forest Classifier – classifies delay severity and cascade risk
-•	Gradient Boosting Classifier – estimates waitlist confirmation probability
-•	Statistical congestion model – estimates station occupancy using passenger flow
-These models generate the analytics displayed across the dashboard layers.
-
-
----
 
 # Tech Stack
 
@@ -139,8 +129,12 @@ Groq LLM API
 Future development could extend RailIntel with:
 
 •	integration with live railway APIs and real-time train tracking
+
 •	graph neural networks for delay propagation modeling
+
 •	real-time passenger crowd prediction
+
 •	reinforcement learning for schedule optimization
+
 •	mobile deployment for passenger travel assistance
 
