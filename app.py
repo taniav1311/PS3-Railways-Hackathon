@@ -725,21 +725,7 @@ elif mode == "Network Resilience":
                 st.dataframe(pd.DataFrame(r["affected_train_details"]),
                              use_container_width=True, hide_index=True)
 
-        st.subheader("Failure Impact — All Route Stations")
-        impacts = []
-        for sc in selected_train_stations:
-            res = network.simulate_station_failure(sc)
-            impacts.append({"Station": stn_name(sc), "Code": sc,
-                            "Trains Affected": res["num_affected_trains"],
-                            "Impact Score": res["impact_score"],
-                            "Breaks Network": "Yes" if not res["network_still_connected"] else "No"})
-        idf = pd.DataFrame(impacts).sort_values("Impact Score", ascending=False)
-        fig = px.bar(idf, x="Station", y="Impact Score", color="Breaks Network",
-                     color_discrete_map={"Yes": "#cc3333", "No": "#339933"},
-                     text="Trains Affected", title="Station Failure Impact Comparison")
-        fig.update_traces(texttemplate='%{text} trains', textposition='outside')
-        fig.update_layout(height=400, template="plotly_dark")
-        st.plotly_chart(fig, use_container_width=True)
+       
 
 
 # ============================================
@@ -843,6 +829,7 @@ def fallback_response(query, err=""):
         parts.append("Available topics: delay analysis, ticket confirmation, station congestion, "
                     "route alternatives, network resilience.")
     return "\n\n".join(parts)
+
 
 
 
