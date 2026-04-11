@@ -168,8 +168,3 @@ RailIntel is a **data-driven railway intelligence system** that combines graph t
 Its primary contribution lies in shifting from **isolated railway metrics to system-level understanding**, enabling more informed and intelligent decision-making.
 
 ---
-
-If you want next-level polish, I can:
-
-* Turn this into a **hackathon-winning README (with problem → solution → impact storytelling)**
-* Or make a **1-page portfolio version recruiters skim in <30 seconds**
